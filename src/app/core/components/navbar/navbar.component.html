@@ -1,1 +1,24 @@
-<p>navbar works!</p>
+<mat-sidenav-container class="sidenav_container">
+  <mat-sidenav #sidenav mode="over" [(opened)]="isMenuOpen" class="mobile_menu">
+    <mat-nav-list>
+      <a mat-list-item (click)="isMenuOpen = false">Home</a>
+      <a mat-list-item (click)="isMenuOpen = false">Sobre</a>
+      <a mat-list-item (click)="isMenuOpen = false">Contato</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="nav_bar">
+      <button mat-icon-button (click)="isMenuOpen = !isMenuOpen" class="menu_button">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Meu Site</span>
+      <span class="spacer"></span>
+      <nav class="desktop_menu">
+        <button mat-button>Home</button>
+        <button mat-button>Sobre</button>
+        <button mat-button>Contato</button>
+      </nav>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
