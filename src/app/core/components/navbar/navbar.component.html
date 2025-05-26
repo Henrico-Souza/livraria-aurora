@@ -1,3 +1,4 @@
+
 <mat-toolbar class="nav_bar">
 
   <img src="assets/images/logo.png" alt="Logo Livraria Aurora" class="logo">
@@ -13,17 +14,90 @@
     <a href="#"><i class="fa-brands fa-instagram"></i></a>
   </div>
 
-  <div class="acoes">
-    <button mat-button>
-      <mat-icon>favorite</mat-icon>
-      <span>Desejos</span>
-    </button>
-    <button mat-button>
-      <mat-icon>shopping_cart</mat-icon>
-      <span>Carrinho</span>
-    </button>
-  </div>
+  <span class="spacer"></span>
 
-  <button mat-raised-button class="login_btn">Login</button>
+      <div class="action">
+        <button mat-button>
+          <mat-icon>favorite</mat-icon>
+          <span>Desejos</span>
+        </button>
+        <button mat-button>
+          <mat-icon>shopping_cart</mat-icon>
+          <span>Carrinho</span>
+        </button>
+      </div>
 
-</mat-toolbar>
+      <button mat-raised-button class="login_btn">Login</button>
+
+      <button mat-icon-button class="hamburger_button" (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    
+    </mat-toolbar>
+
+    
+    <!--Seções-->
+    <mat-toolbar class="lib_sections">
+      <div class="dropdown_container">
+        <button mat-button class="cat_btn">LIVROS</button>
+        <ul class="dropdown_content dropdown_columns">
+          <li><a href="#">Crime</a></li>
+          <li><a href="#">Culinário</a></li>
+          <li><a href="#">Drama</a></li>
+          <li><a href="#">Educação</a></li>
+          <li><a href="#">Fantasia</a></li>
+          <li><a href="#">Ficção</a></li>
+          <li><a href="#">Horror</a></li>
+          <li><a href="#">Humor</a></li>
+          <li><a href="#">Jardinagem</a></li>
+          <li><a href="#">Mangá</a></li>
+          <li><a href="#">Religião</a></li>
+          <li><a href="#">Romance</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown_container">
+        <button mat-button class="cat_btn">PAPELARIA</button>
+        <ul class="dropdown_content">
+          <li><a href="#">Arte Recreação</a></li>
+          <li><a href="#">Cadernos</a></li>
+          <li><a href="#">Fichários</a></li>
+          <li><a href="#">Material de Escritório</a></li>
+          <li><a href="#">Material Infantil</a></li>
+          <li><a href="#">Material Juvenil</a></li>
+          <li><a href="#">Mochilas</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown_container">
+        <button mat-button class="cat_btn">JOGOS</button>
+        <ul class="dropdown_content">
+          <li><a href="#">Álbuns de Figurinhas</a></li>
+          <li><a href="#">Cartas</a></li>
+          <li><a href="#">Jogos Eletrônicos</a></li>
+          <li><a href="#">Jogos de Mesa</a></li>
+          <li><a href="#">Miniaturas</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown_container">
+        <button mat-button class="cat_btn">INFORMÁTICA</button>
+        <ul class="dropdown_content">
+          <li><a href="#">Acessórios para Eletrônicos</a></li>
+          <li><a href="#">Carculadoras</a></li>
+          <li><a href="#">Periféricos</a></li>
+        </ul>
+      </div>
+
+      <a mat-button class="cat_btn" href="#">MAIS VENDIDOS</a>
+      <a mat-button class="cat_btn" href="#">LANÇAMENTOS</a>
+      <a mat-button class="cat_btn" href="#">PROMOÇÕES</a>
+
+    </mat-toolbar>
+
+    <mat-toolbar class="searchbar_toolbar"> 
+      <div class="searchbar_mobile">
+        <mat-icon>search</mat-icon>
+        <input [formControl]="searchControl" placeholder="Buscar..." />
+      </div>
+    </mat-toolbar>
