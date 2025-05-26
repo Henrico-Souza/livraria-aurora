@@ -1,2 +1,93 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav_container">
+  <!--Mobile-->
+  <mat-sidenav #sidenav mode="over" class="mobile_menu">
+    <button class="close_btn" (click)="sidenav.close()">X</button>
+    <div class="menu_section" (click)="isLivrosOpen = !isLivrosOpen">
+      <button mat-button class="cat_btn">
+        Livros <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      @if (isLivrosOpen) {
+        <ul class="dropdown_menu">
+          <li><a href="#">Crime</a></li>
+          <li><a href="#">Culinário</a></li>
+          <li><a href="#">Drama</a></li>
+          <li><a href="#">Educação</a></li>
+          <li><a href="#">Fantasia</a></li>
+          <li><a href="#">Ficção</a></li>
+          <li><a href="#">Horror</a></li>
+          <li><a href="#">Humor</a></li>
+          <li><a href="#">Jardinagem</a></li>
+          <li><a href="#">Mangá</a></li>
+          <li><a href="#">Religião</a></li>
+          <li><a href="#">Romance</a></li>
+        </ul>
+      }
+    </div>
+
+    <div class="menu_section" (click)="isPapelariaOpen = !isPapelariaOpen">
+      <button mat-button class="cat_btn">
+        Papelaria <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      @if (isPapelariaOpen) {
+        <ul class="dropdown_menu">
+          <li><a href="#">Arte Recreação</a></li>
+          <li><a href="#">Cadernos</a></li>
+          <li><a href="#">Fichários</a></li>
+          <li><a href="#">Material de Escritório</a></li>
+          <li><a href="#">Material Infantil</a></li>
+          <li><a href="#">Material Juvenil</a></li>
+          <li><a href="#">Mochilas</a></li>
+        </ul>
+      }
+    </div>
+
+    <div class="menu_section" (click)="isJogosOpen = !isJogosOpen">
+      <button mat-button class="cat_btn">
+        Jogos <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      @if (isJogosOpen) {
+        <ul class="dropdown_menu">
+          <li><a href="#">Álbuns de Figurinhas</a></li>
+          <li><a href="#">Cartas</a></li>
+          <li><a href="#">Jogos Eletrônicos</a></li>
+          <li><a href="#">Jogos de Mesa</a></li>
+          <li><a href="#">Miniaturas</a></li>
+        </ul>
+      }
+    </div>
+
+    <div class="menu_section" (click)="isInformaticaOpen = !isInformaticaOpen">
+      <button mat-button class="cat_btn">
+        Informática <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      @if (isInformaticaOpen) {
+        <ul class="dropdown_menu">
+          <li><a href="#">Acessórios para Eletrônicos</a></li>
+          <li><a href="#">Carculadoras</a></li>
+          <li><a href="#">Periféricos</a></li>
+        </ul>
+      }
+    </div>
+
+    <a mat-button class="cat_btn" href="#">Mais Vendidos</a>
+    <a mat-button class="cat_btn" href="#">Lançamentos</a>
+    <a mat-button class="cat_btn" href="#">Promoções</a>
+
+    <div class="social_mobile">
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+    <button mat-raised-button class="login_mobile">Login</button>
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav_content">
+    <app-navbar [sidenav]="sidenav"></app-navbar>
+    <app-slide-carousel></app-slide-carousel>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
