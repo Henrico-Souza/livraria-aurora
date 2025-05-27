@@ -1,6 +1,13 @@
-.nav_bar{
-  position: relative;
+:host{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+}
+
+.nav_bar{
+  z-index: 1200;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +37,7 @@
 }
 
 .dropdown_content {
-  z-index: 9999;
+  z-index: 1100;
   list-style: none;
   display: none;
   position: absolute;
